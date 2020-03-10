@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 import { Container, Dimmer, Loader } from "semantic-ui-react";
 
@@ -39,7 +40,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg">
       <Router>
         <Navbar />
         <Container>
@@ -64,7 +65,7 @@ function App() {
           )}
         </Container>
       </Router>
-    </>
+    </div>
   );
 }
 

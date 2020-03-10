@@ -1,4 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { Container, Dimmer, Loader } from "semantic-ui-react";
+
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Planets from "./components/Planets";
+import People from "./components/People";
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -16,19 +24,53 @@ function App() {
       let res = await fetch("https://swapi.co/api/people/?format=json");
       let data = await res.json();
       setPeople(data.results);
+      setLoading(false);
     }
 
     async function fetchPlanets() {
       let res = await fetch("https://swapi.co/api/planets/?format=json");
       let data = await res.json();
       setPlanets(data.results);
+      setLoading(false);
     }
 
     fetchPeople();
     fetchPlanets();
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Container>
+          {loading ? (
+            <Dimmer active inverted>
+              <Loader inverted>Loading</Loader>
+            </Dimmer>
+          ) : (
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/personagens">
+                <People data={people} />{" "}
+                {/** Passa a prop people para outros componentes usarem */}
+              </Route>
+              <Route exact path="/planetas">
+                <Planets data={planets} />{" "}
+                {/** Passa a prop planets para outros componentes usarem */}
+              </Route>
+            </Switch>
+          )}
+        </Container>
+      </Router>
+    </>
+  );
 }
 
 export default App;
+
+/**
+ * Sintaxe de roteamento é: Engloar os componentes em um Router e cada rota específica
+ * com Switch e Route e especificando o exact path="/caminho-do-componente"
+ */

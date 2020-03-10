@@ -5,7 +5,7 @@ export default function Planets({ data }) {
   // data que é passada pelo App é recebida aqui
   return (
     <>
-      <h1>Planetas</h1>
+      <h1 className="header">Planetas</h1>
       <Grid columns={3}>
         {data.map((planets, i) => {
           return (

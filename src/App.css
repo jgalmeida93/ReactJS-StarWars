@@ -3,10 +3,11 @@
 }
 
 .bg {
-  height: 1920px;
+  height: 100%;
   background-color: red;
   background-image: url(./images/star-wars-logo-3654.jpg);
   background-size: contain;
+  background-attachment: fixed;
 }
 
 .header-white {

@@ -6,10 +6,10 @@ export default function People({ data }) {
   return (
     <>
       <h1 className="header">Personagens</h1>
-      <Grid columns={4}>
+      <Grid stackable>
         {data.map((people, i) => {
           return (
-            <Grid.Column key={i}>
+            <Grid.Column computer={4} tablet={4} mobile={1} key={i}>
               <Card>
                 <Card.Content>
                   <Card.Header>{people.name}</Card.Header>

@@ -18,42 +18,46 @@ export default function Navbar() {
   return (
     <div>
       <Segment inverted>
-        <Menu inverted pointing secondary>
+        <Menu stackable inverted pointing secondary>
           <Container>
-            <Link to="/">
-              <Menu.Item
-                name="Início"
-                active={activeItem === "Início"}
-                onClick={handleItemClick}
-              >
-                <FaHome /> &nbsp;&nbsp; Início
-              </Menu.Item>
-            </Link>
-            <Link to="/personagens">
-              <Menu.Item
-                name="Personagens"
-                active={activeItem === "Personagens"}
-                onClick={handleItemClick}
-              >
-                <MdPeople /> &nbsp;&nbsp; Personagens
-              </Menu.Item>
-            </Link>
-            <Link to="/planetas">
-              <Menu.Item
-                name="Planetas"
-                active={activeItem === "Planetas"}
-                onClick={handleItemClick}
-              >
-                <IoMdPlanet /> &nbsp;&nbsp; Planetas
-              </Menu.Item>
-            </Link>
+            <Menu.Item
+              as={Link}
+              to="/"
+              name="Início"
+              active={activeItem === "Início"}
+              onClick={handleItemClick}
+            >
+              <FaHome /> &nbsp;&nbsp; Início
+            </Menu.Item>
+            <Menu.Item
+              as={Link}
+              to="/personagens"
+              name="Personagens"
+              active={activeItem === "Personagens"}
+              onClick={handleItemClick}
+            >
+              <MdPeople /> &nbsp;&nbsp; Personagens
+            </Menu.Item>
+
+            <Menu.Item
+              as={Link}
+              to="/planetas"
+              name="Planetas"
+              active={activeItem === "Planetas"}
+              onClick={handleItemClick}
+            >
+              <IoMdPlanet /> &nbsp;&nbsp; Planetas
+            </Menu.Item>
+
             <Menu.Menu position="right">
-              <Menu.Item name="github">
-                <a href="https://github.com/jgalmeida93">
-                  <IconContext.Provider value={{ size: "1.5em" }}>
-                    <FaGithub />
-                  </IconContext.Provider>
-                </a>
+              <Menu.Item
+                name="github"
+                href="https://github.com/jgalmeida93"
+                target="_blank"
+              >
+                <IconContext.Provider value={{ size: "1.5em" }}>
+                  <FaGithub />
+                </IconContext.Provider>
               </Menu.Item>
             </Menu.Menu>
           </Container>

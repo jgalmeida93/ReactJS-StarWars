@@ -6,7 +6,7 @@ export default function People({ data }) {
   return (
     <>
       <h1 className="header">Personagens</h1>
-      <Grid columns={3}>
+      <Grid columns={4}>
         {data.map((people, i) => {
           return (
             <Grid.Column key={i}>

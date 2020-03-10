@@ -6,10 +6,10 @@ export default function Planets({ data }) {
   return (
     <>
       <h1 className="header">Planetas</h1>
-      <Grid columns={3}>
+      <Grid stackable>
         {data.map((planets, i) => {
           return (
-            <Grid.Column key={i}>
+            <Grid.Column computer={4} tablet={4} mobile={1} key={i}>
               <Card>
                 <Card.Content>
                   <Card.Header>{planets.name}</Card.Header>

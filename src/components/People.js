@@ -5,7 +5,7 @@ export default function People({ data }) {
   // data que é passada pelo App é recebida aqui
   return (
     <>
-      <h1>Personagens</h1>
+      <h1 className="header">Personagens</h1>
       <Grid columns={3}>
         {data.map((people, i) => {
           return (

@@ -6,7 +6,7 @@
   height: 100%;
   background-color: red;
   background-image: url(./images/star-wars-logo-3654.jpg);
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -25,6 +25,8 @@
 .github {
   font-size: 1em;
 }
-.home {
+.home,
+.people,
+.planets {
   height: 100vh;
 }

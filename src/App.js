@@ -22,14 +22,18 @@ function App() {
      */
 
     async function fetchPeople() {
-      let res = await fetch("https://swapi.co/api/people/?format=json");
+      let res = await fetch("https://swapi.co/api/people/?format=json", {
+        mode: "cors"
+      });
       let data = await res.json();
       setPeople(data.results);
       setLoading(false);
     }
 
     async function fetchPlanets() {
-      let res = await fetch("https://swapi.co/api/planets/?format=json");
+      let res = await fetch("https://swapi.co/api/planets/?format=json", {
+        mode: "cors"
+      });
       let data = await res.json();
       setPlanets(data.results);
       setLoading(false);

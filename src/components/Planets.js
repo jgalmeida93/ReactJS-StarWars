@@ -4,7 +4,7 @@ import { Card, Grid } from "semantic-ui-react";
 export default function Planets({ data }) {
   // data que é passada pelo App é recebida aqui
   return (
-    <>
+    <div className="planets">
       <h1 className="header">Planetas</h1>
       <Grid stackable>
         {data.map((planets, i) => {
@@ -27,6 +27,6 @@ export default function Planets({ data }) {
           );
         })}
       </Grid>
-    </>
+    </div>
   );
 }

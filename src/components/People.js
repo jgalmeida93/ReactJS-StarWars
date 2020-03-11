@@ -4,7 +4,7 @@ import { Card, Grid } from "semantic-ui-react";
 export default function People({ data }) {
   // data que é passada pelo App é recebida aqui
   return (
-    <>
+    <div className="people">
       <h1 className="header">Personagens</h1>
       <Grid stackable>
         {data.map((people, i) => {
@@ -27,6 +27,6 @@ export default function People({ data }) {
           );
         })}
       </Grid>
-    </>
+    </div>
   );
 }

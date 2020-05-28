@@ -13,6 +13,9 @@ function App() {
   const [people, setPeople] = useState([]);
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
+  const myHeader = new Headers();
+
+  myHeader.append("Access-Control-Allow-Origin", "*");
 
   useEffect(() => {
     /**
@@ -22,18 +25,14 @@ function App() {
      */
 
     async function fetchPeople() {
-      let res = await fetch("https://swapi.co/api/people/?format=json", {
-        mode: "cors"
-      });
+      let res = await fetch("https://swapi.dev/api/people/");
       let data = await res.json();
       setPeople(data.results);
       setLoading(false);
     }
 
     async function fetchPlanets() {
-      let res = await fetch("https://swapi.co/api/planets/?format=json", {
-        mode: "cors"
-      });
+      let res = await fetch("https://swapi.dev/api/planets/");
       let data = await res.json();
       setPlanets(data.results);
       setLoading(false);
